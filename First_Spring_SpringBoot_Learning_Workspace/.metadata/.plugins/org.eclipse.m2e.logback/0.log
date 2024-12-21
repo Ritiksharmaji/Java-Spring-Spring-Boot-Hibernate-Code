@@ -547,3 +547,29 @@ org.eclipse.core.runtime.CoreException: Could not resolve artifact javax.annotat
 	at org.eclipse.m2e.core.embedder.IMaven.execute(IMaven.java:300)
 	at org.eclipse.m2e.jdt.internal.DownloadSourcesJob.run(DownloadSourcesJob.java:149)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+2024-12-21 14:09:36,286 [Worker-0: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2024-12-21 14:09:40,934 [Worker-5: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\next wave 4.0\java\Java-Code\JAVA-SPRING-SPRING-BOOT-HIBERNATE-CODE\First_Spring_SpringBoot_Learning_Workspace\SpringJdbc\src\main\resources
+2024-12-21 14:09:41,324 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Nothing to compile - all classes are up to date.
+2024-12-21 14:09:41,331 [Worker-5: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\next wave 4.0\java\Java-Code\JAVA-SPRING-SPRING-BOOT-HIBERNATE-CODE\First_Spring_SpringBoot_Learning_Workspace\SpringJdbc\src\test\resources
+2024-12-21 14:09:41,368 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Nothing to compile - all classes are up to date.
+2024-12-21 14:09:43,167 [Worker-5: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\next wave 4.0\java\Java-Code\JAVA-SPRING-SPRING-BOOT-HIBERNATE-CODE\First_Spring_SpringBoot_Learning_Workspace\SpringJdbc\src\main\resources
+2024-12-21 14:09:43,178 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Nothing to compile - all classes are up to date.
+2024-12-21 14:09:43,191 [Worker-5: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\next wave 4.0\java\Java-Code\JAVA-SPRING-SPRING-BOOT-HIBERNATE-CODE\First_Spring_SpringBoot_Learning_Workspace\SpringJdbc\src\test\resources
+2024-12-21 14:09:43,201 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Nothing to compile - all classes are up to date.
+2024-12-21 14:09:43,616 [Worker-5: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\next wave 4.0\java\Java-Code\JAVA-SPRING-SPRING-BOOT-HIBERNATE-CODE\First_Spring_SpringBoot_Learning_Workspace\SpringORM\src\main\resources
+2024-12-21 14:09:43,841 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Nothing to compile - all classes are up to date.
+2024-12-21 14:09:43,844 [Worker-5: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\next wave 4.0\java\Java-Code\JAVA-SPRING-SPRING-BOOT-HIBERNATE-CODE\First_Spring_SpringBoot_Learning_Workspace\SpringORM\src\test\resources
+2024-12-21 14:09:43,893 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Nothing to compile - all classes are up to date.
+2024-12-21 14:09:44,338 [Worker-5: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-12-21 14:09:44,428 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Nothing to compile - all classes are up to date.
+2024-12-21 14:09:44,431 [Worker-5: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2024-12-21 14:09:44,459 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Nothing to compile - all classes are up to date.
+2024-12-21 14:09:49,283 [Worker-1: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\next wave 4.0\java\Java-Code\JAVA-SPRING-SPRING-BOOT-HIBERNATE-CODE\First_Spring_SpringBoot_Learning_Workspace\SpringORM\src\main\resources
+2024-12-21 14:09:49,298 [Worker-1: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Nothing to compile - all classes are up to date.
+2024-12-21 14:09:49,328 [Worker-1: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory D:\next wave 4.0\java\Java-Code\JAVA-SPRING-SPRING-BOOT-HIBERNATE-CODE\First_Spring_SpringBoot_Learning_Workspace\SpringORM\src\test\resources
+2024-12-21 14:09:49,343 [Worker-1: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Nothing to compile - all classes are up to date.
+2024-12-21 14:09:49,603 [Worker-1: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-12-21 14:09:49,618 [Worker-1: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Nothing to compile - all classes are up to date.
+2024-12-21 14:09:49,621 [Worker-1: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2024-12-21 14:09:49,633 [Worker-1: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Nothing to compile - all classes are up to date.
+2024-12-21 14:23:49,293 [Worker-0: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is not available. Remote download required.
