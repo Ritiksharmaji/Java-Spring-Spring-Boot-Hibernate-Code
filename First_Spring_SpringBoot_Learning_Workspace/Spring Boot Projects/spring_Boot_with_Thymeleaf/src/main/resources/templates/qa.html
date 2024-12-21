@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Q&A Session</title>
+</head>
+
+<body>
+    <h1>Q&A Session</h1>
+    <ul>
+        <li th:each="qa : ${qaList}">
+            <strong th:text="${qa.question}"></strong>
+            <br>
+            <span th:text="${qa.answer}"></span>
+        </li>
+    </ul>
+</body>
+
+</html>

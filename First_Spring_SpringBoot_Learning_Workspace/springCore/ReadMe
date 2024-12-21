@@ -1,0 +1,878 @@
+
+
+----------------------------------------------
+video-6 - basically we can inject the data into bean class by using xml in various ways..
+			1) by using setter method
+			2) by using constructor more...
+step - 1: creating MAVEN project
+step - 2: adding dependencies => spring core,spring context. into pom.xml 
+step - 3: creating beans-java POJO
+step - 4: CREATING THE CONFIGURATION FILE => config.xml
+		  Create a spring configuration file with any_name.xml in src/main/java
+		  then we need to includes the name space of spring in this XML file from documentation
+		  in the documentation file see the core technology where Configuration metadata content 
+		  and open it and there XML file configuration will available for spring copy and past to 
+		  here in XML file.
+step - 5: main class: which can pull the object and use.
+--------------------
+video-6 - To inject the data to setters (primitive data types , collection data types)
+		  in this video we have learn about that how to inject the primitive data to 
+		  setters throw the configure file
+	basically three way are there..
+	example--
+		<bean class="com.springcore.springCore.First" name="student1">
+						<!-- 
+						we can assigen or inject  the values of fileds or setter elements of 
+						class  by using three ways..
+						1s) using property and value tag
+						2ns) using property tag and values as attribute
+						3rd) using p schema for that we need to configure the 
+						xmlns:p="http://www.springframework.org/schema/p" in XML file.  
+						-->
+						
+		<!-- first way -->						 
+		 <property name="student_id">
+		 <value> 
+		 50      
+		 </value>
+		 </property>
+		 
+		  <property name="studentName">
+		 <value>   
+		 RITIK SHARMA    
+		 </value>
+		 </property>
+		 
+		 <!--
+		  <property name="student_Adds">
+		 <value>      
+		 USHRI KHURD POST HASANPURA 
+		 </value>
+		 </property>  -->
+		 
+		 <!-- 2nd  values as attribute of property tag not a tag as previous using p schema  -->
+		 
+		 <property name = "student_Adds" value = "DELHI"/>
+		 
+		 </bean>
+		 
+ <!---------  $$$$$$$$$$$$$$$$$$$$$$$$ creating second bean object for storing data by using values as attribute not tag. $$$$$$$$$$$$$$$$$$$$$-->
+		 
+		 <bean class="com.springcore.springCore.First" name="student2">
+		 
+		 <property name = "student_id" value = "21"/>
+		 
+		 <property name="studentName" value="Ankit sharma"/>
+		
+		 <property name="student_Adds" value="bihar siwan"/>
+		 
+		 </bean>
+		 
+		 
+<!--------   $$$$$$$$$$$$$$$$$$$$$$$$$$$$$ by using p schema other ways $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$  -->
+			 
+			 <bean class="com.springcore.springCore.First" name="student3" p:student_id="011" p:studentName = "priyanshu sharma" p:student_Adds = "ushri bihar"/>
+		
+		 
+----------------------------------------------------------------------------------------------------------------------------------
+video-7
+------------  
+	How to inject collection types List , Set , Map and Properties | Spring Tutorial
+	in this video we learn about that how to inject the collection data to setters 
+	throws the configure file..
+for List collection
+	
+	<bean>
+	<property name = "property_name">
+	<list>
+	<value> value </value>
+	<value> value </value>
+	<value> value </value>
+	<value> value </value>
+	<null/>  // if you want to fill the null values.
+	</list>
+	</property>
+	</bean>
+
+for Set collection
+
+	<bean>
+	<property name = "property_name">
+	<set>
+	<value> value </value>
+	<value> value </value>
+	<value> value </value>
+	<value> value </value>
+	<null/>  // if you want to fill the null values.
+	</set>
+	</property>
+	</bean>
+	
+for Map collection
+
+	<bean>
+	<property name = "property_name">
+	<map>
+		<enter key="key_value" value = "value"/>
+		<enter key="key_value" value = "value"/>
+		-------------
+	</map>
+	<property>
+	</bean>
+
+
+for Properties collection
+	
+	<bean>
+	<property name="">
+		<props>
+			<prop key="name"> ....</prop>
+			<prop key = "name">....</prop>
+			..............................
+		</props>
+	<property>
+	</bean>
+
+---- end --------------------------------------------------------
+
+video-9
+practical of injecting the collection type data to setter.
+
+-- for that see the package of com.springcore.collections---
+
+-------------------------------------------------------------------------	
+		
+video-10
+Injecting Reference Type Practical Video  - this is mostally using full.
+--: basically when we have more than one object then to inject one object to depend on other on 
+	we are using the Reference type 
+	
+	we can also configure the below code into p schema code
+	
+	ex- 
+<bean class="com.springcore.Ref.A" name="aref" >
+ <property name="x" value="12"/>
+ <!--
+ <property name="ob">
+ 	<ref bean="bref"/>
+ </property>
+  ### by other way in below
+ -->
+ <property name="ob" ref="bref" />
+ 
+ </bean>
+ 
+ 	<!--	To p shema  --->
+ <bean class="com.springcore.Ref.A" name="aref" p:x = "33" p:ob-ref="bref" />
+ 
+ ----------------------------------------------------------------------
+ video-11 -----------------
+ 
+ constructor injection: we are going to call the constructor to inject 
+ 	step-1: create package name as com.springcore.Ci
+ 	step-2:create a bean class name person.java
+ 	step-3: write all the properties into bean Person class.
+ 	step-4:create bean configuration xml file name as CLconfig.xml
+ 	step-5: we are using the constructor injection for that we need
+ 			to use the <constructor-arg> tag to inject the properties
+ 			and one <constructor-arg> tag means configuration of one property
+ 			of bean class, so we need to write n numbers of <constructor-arg> as property
+ 	
+ 	step-6:we can use <constructor-arg> by threes ways
+ 			a) by tag
+ 			b)by parameter
+ 			c)by c-schema -> c-schema for constructor and p-schema for properties
+ 			d) in CIconfig.xml we are using the type tag to define the types of property 
+ 	step-7:create Test.java class (which is container)
+ 	
+ 	step-8: constructor injection with Reference(object) type
+ 	step-9: create a class name Certif.java bean  to give the Person class constructor and write some property 
+ 	step-10: to pass the Certif.java bean  to Person bean we need to create object for it by Ciconfig.xml file
+ 	step-11: configure the Certif.java by c-schema type see the xml code.
+ 
+ example -- 
+ <!-- using the c-schema -->
+<bean class="com.springcore.Ci.Certi" name="cer" c:name="python programming language"/>
+ 	
+
+--------------------------------------------------------------------------------------------------------
+video-12 Ambiguity Problem and its Solution with Constructor Injection 
+---------
+	step-1: creating a bean class name as Addition.java
+	step-2: configure the details of this class to CIconfig.xml file 
+	step-3: creating a two constructor in Addition bean which accept the arguments of 
+			a) int , int 
+			b) double , double
+			then so here which constructor define first that only execute first 
+			if int,int parameter contructor define fist then that will execute and second will override or
+			if double , double parameter contructor define fist then that will execute.
+			---- Note-----
+			but in-case of string , string parameter constructor that will execute. this problem is called Ambiguity
+	
+	step-4: to change the default behavior of constructor we are using the type tag in CIconfig.xml file to identife the parameters type.
+	step-5: we can also change the order of type parameter by config.xml  of bean constructor by using the index tag 
+			the index tag by-default start with 0 index.
+------------------------------------------------------------------------------------------------
+
+video-13 Life Cycle methods of Spring Bean
+----------
+	step-1: when ever spring create a object of bean class then it will provides two
+			important method for that every bean
+			1) public void init() -> it is used to Initialization the code, means when we are loading the configuration file or connection to database , or webservice connection etc.
+			 
+			2)public void destory() -> to clean or destroy the connection code.
+			
+			note- we can change the name of this two method but can't change the syntax of this two.
+	
+	step-2: Life-cycle
+		IOC container-> we car giving the spring bean to ioc container and its meta data(configuration.xml) then.
+		step-a: it will create object for bean class
+		step-b: setting the properties values of bean class
+		step-c: then it will call the init method 
+		step-d: after calling the init method we call read and use the bean 
+		step-e: after perform all operation call the destroy method.
+		
+		note--
+		to configure the bean class we can do by three ways
+		1) by xml
+		2)Spring intrface
+		3)Annotation
+-----------------------------------------------------------------------
+
+video-14 Implementing Life-cycle methods Using XML 
+---------- implementation of init() method and destroy method
+	step-1: create bean class name as Smasha.java
+	 
+	step-2: create Configure_lifeCycle.xml file and provide the details of bean class 
+			with init method and destroy method
+			
+	step-3: create a Test.java(Container) and run it
+	
+	step4: in the output the init method will call and then other and after all destroy
+			method also call but that will not execute,so  to controller it we are using the
+			AbstractApplicatContext in container in-place of ApplicationContext.
+ 	
+----------------------------------------------------------------------------------------------------
+ video-15 Implementing bean life cycle using interfaces | IntializingBean | DisposableBean	
+ 	
+ 	step-1: we are going to learn about InitializingBean method and DisposableBean method
+ 			InitializingBean()-> to intialize the bean class
+ 			DisposableBean()-> to destroy the bean class
+ 	
+ 	step-2: creating the Pepsi.java bean class in com.springcore.springlifecycle.
+ 	step-3: give the details of Pepsi.java Bean class but no need to use here init() method and destroy() method details
+ 			in config.xml file beaucse we are using the two interface which will identify.
+ 	
+ 	step-4: give the details in Test.java (Container).
+ 	
+-------------------------------------------------------------------------
+video-16 Implementing Bean LifeCyle using Annotations | @PostConstruct | @PreDestroy |
+
+	step-1: @PostConstruct -> it gives the funcanality to after properties constructor run the function or method.
+							so it works as init() method 
+	step-2: @PreDestroy ->  works as destroy method.
+	step-3: create a java bean name as Example.java
+	step-4: gives the configuration of Example.java file to Configura_lifeCycle.xml file
+	step-5: use the Test.java Container to create object for Bean class
+	step-6: after above then to implement the init() an distroy method we are using the those two annocation
+	step-7: write two method star and end an apply these annothentation on them but dy-default it will not support 
+			so go-google and search Postconstruct spring
+			a) go to - https://www.baeldung.com/spring-postconstruct-predestroy
+			b) and add the this dependency in pom.xml to use those annotation
+			ex- <dependency>
+				    <groupId>javax.annotation</groupId>
+				    <artifactId>javax.annotation-api</artifactId>
+				    <version>1.3.2</version>
+				</dependency>
+	step-8: after apply the dependency also it don't work beauce it by-default has inable to able it we 
+			have go to cong.xml file and to anable all the annotation we are writing
+			
+--------------------------------------------------------------------------------------------------------------------
+video-17 Autowiring in Spring Framework | Best Explanation
+
+	step-1: Autowiring -> Feature of spring framework in which spring container inject the dependencies automatically.
+						 it can't be used for inject the primitive data types and string it used for only reference(object) type.
+ 						c) in spring framework we are doing configuration by two ways 1) by mannualy 2) by automatically
+ 						d)autowiring can be done by two ways 1) by using XML 2) by using Annotation
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+video-18 Autowiring using XML complete Session | byName | byType | byConstructor |
+
+	step-1: to undertand this concept we need to create two bean class where one class depends on other one
+	step-2: create package name com.springcore.auto.write with bean class, configuration.xml file and test container class.
+ 	step-3: declare or define the dependent bean in autoConfig.XMl file 
+ 	step-4: here we can use the Autowiring inject beacuse address object is a Object types of Address class not in any primitive types.
+ 	step-5: when we are defining the Emp bean in conf.xml then if we are using the autowire="byName" Autowiring during define it then container 
+ 			will goes to inside the Emp.java bean and find that if any otherr beans are their to whom object name and config name are same.
+ 			------NOTE-------
+ 			here important note that the object name of dependent class in other class and conf.xml file must be same else it give null..
+ 	
+ 	step-6: creating Test.java(container) and run it
+ 	step-7: autowire="byType" -> if we define the main bean in conf.xml file with autowire="byName" then container
+ 								will search that if any object is in Emp and if yes then if that bean has define in 
+ 								confi.xml or not if yes then it will give the response respective 
+ 								so, oevrall in type container will check the bean class location which object has define in other one.(addresstype)
+ 	
+ 	step-8: --- note----------------
+ 			in the autowire="byType" here is a problem that if we have define more than one object for it then container will not able to correct that for which 
+ 			object it requesting so for that 
+ 	
+ 	step-9: autowire="constructor" -> when we are using this then parametarize constructor of main bean will call.
+ 	
+ 	
+ 	
+--------------------------------------------------------------------------------------------------------------------
+video-19 @Autowired Annotation for Autowiring | Autowiring in Spring Framework 
+
+	step-1: copy the previous project with all the code and again setup based on package
+	step-2: delete the autowire="constructor" from config.xml of main bean beause now we are going to
+			do by appling the annotation on properties, constructor and setter method.
+	
+	step-3: apply on properties->  apply the @Autowired on properties and after apply enable the annotation 
+			from confi.xml file
+	
+	example- 
+	a)to apply the annotaion 
+			@Autowired
+		private Address address;
+		
+	 b) to enable the annotation on confi.xml
+	  <!-- to enable to annotation -->
+ 		<context:annotation-config/>	
+ 	c) by apply this if we change the name of dependent bean from conf.xml that will not effect to it.
+ 	b) but if we are try to access more than one object of bean class then it will show error beacuse it not
+ 		able to figure out which object calling for resource. 
+ 		to figure out we are using the @Qualifier Annotation
+----------------------------------------------------------------------------------------------------------
+
+video-20 @Qualifier Annotation with Autowiring | Spring Framework 
+-------------------
+	step-1: @Qualifier Annotation -> by using @Qualifier we can give the bean object name at time of using 
+			it below the @Autowired in main bean file then that bean object will run.
+ 	
+ 	step-2: we can apply this @Qualifier Annotation on properties and setter method but can't
+ 			apply on constructor 
+
+
+-------------------------------------------------------------------------------
+video-21 Spring Standalone Collections[List,Map,Properties] | Util Schema in Spring
+	step-1: create a package name as com.springcore.standalone.collections
+			and create Person bean class and Test.java container nad conf.xml file.
+	step-2: to map the list types data we need to some change in xml file 
+	example- 
+	<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:util="http://www.springframework.org/schema/util"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        classpath:/org/springframework/beans/factory/xml/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        classpath:/org/springframework/context/config/spring-context.xsd
+        http://www.springframework.org/schema/util
+        classpath:/org/springframework/beans/factory/xml/spring-util.xsd">
+        
+     step-3: add the code in config.xml  to store collection types
+     
+     exaple- 
+     <!-- standalone list -->
+    <util:list id="mybestfrineds" list-class="java.util.LinkedList">
+        <value>aman</value>
+        <value>Ankush</value>
+        <value>Arman</value>
+        <value>golu</value>
+    </util:list>
+-------------------------------------------------------------------------------------------------------------------------
+video-22 Stereotype Annotations | @Component Annotation | @Value Annotation
+----------
+	step-1: to create a object for bean class we need to give the details of that bean class
+			by using the configuration XML file with <bean> tag but to ovide this process
+			we can use the 	Stereotype Annotations  that will appear on class level.
+	
+	step-2: creating a package name as com.springcore.stereotype and create Student bean and Test conatiner
+			with configuration.xml file.
+ 	
+ 	step-3: after create conf.xml file here we are not using any <bean> tag so inplace of that
+ 			we are using the below code 
+ 			<context:componets-scan base-package="package_name"/> 
+ 			example--
+ 			<context:componets-scan base-package="com.springcore.stereotype"/> 
+ 	
+ 	step-4: prepare Test container and run it then sucess full it will run but property value
+ 			we didn't give so value will come null.
+ 	
+ 	step-5: here one most import things that we didn't provides the beans name as we are proving
+ 			in conf.xml so during create object for bean class in which object name container
+ 			will create bean object so,
+ 			ans- is that in cammler leter of bean class means if name of bean class is Student then
+ 			object name must by create by container as student only.
+ 			
+ 	step-6: to display the valaue of each properties w need to use the @Valaue() Annotaion above 
+ 			that each and every value of Bean class, then value also will display.
+ 			
+ 			example -
+ 			@Value("Ritik ji sharma")
+ 	
+	step-7: to give the instuction to container for creating the bean object name we can give the 
+			bean object name at using @Component annotation.
+			example - @Component()
+					@Component("obj")
+
+--------------------------------------------------------------------------------------------------------------------------------------
+video-23 Collections with @Value | Spring Framework 
+----------------
+	step-1: to inject the collection type data into properties we are create the standalone collection in xml file.
+	step-2: 
+	
+-------------------------------------------------------------------------------------------------
+videp-24 Spring Bean Scope | Singleton | Prototype | how to configure scope spring
+------------
+	step-1: spring container follow some bean class scope and based on that scope it create object for them
+			for spring there are basically some list of scopes are there
+			a)Singleton-> this scope is by-default scope for spring container
+			b)prototype -> 
+			c)request-> this is basically used in web requesting
+			d)session -> this is in web application when we store some thing in session object 
+			e)globalsession -> it is specially for portlat application.
+			
+			-> in singleton type only one time container will create object for application
+				and send again and again(single oject will be created by spring container)
+			-> in prototype type every time object will create by container for application as peer user request.
+	
+	step-2: to figure out the object we can use the hashcode().
+	step-3: by-defacult every bean object has Singleton scope so , to change there
+			scope we have two types of understand the configure bean scope 
+			
+	-------- The configure bean scope can be two types 
+		a)by xml file  -> 
+		example -
+			<bean class="" name="" scope=""/>
+		b)by annotation->
+		example -
+			@Component
+			@Scope("")
+			class Student{
+			-----
+			----
+			}
+				
+------------------------------------------------------------------------
+video-25 Spring Expression Language | SpEL | what is SpEL | How to use Expression 
+------ 
+	step-1: the spring expression language supports parsing and executing expression with the help of @Value annotations.
+	step-2: we can apply the spEl on any things like on numeric values, methods, objects, etc.
+	
+	step-3: create a package name as com.springcore.spEL and respective create
+			bean and container class and config.xml file also.
+------------------------------------------------------------------------------
+video-26 How to invoke static method , variables and creating object | Spring Expression Language
+---------
+	step-1: to call the static method write below syntax in expression
+			T(class).method(param)
+	step-2: to pass the variable in expression 
+			T(class).variable
+	step-3: to pass the object type--> @Value("#{new java.lang.String('Ritik sharma')}")
+	
+-----------------------------------------------------------------------------------------------
+video-27 Boolean type with SpEL | Spring Expression Language | Spring Framework 
+-------------
+	step-1: to set the values of boolean types properties of bean class we have
+			to use a such condition in express which gives the boolean values
+			and by-defalut its value is false.
+		like--
+		3>9 -> false
+		5>2 -> true
+		
+--------------------------------------------------------------------------------------
+---------------------------------end of core spring --------------------------------------------------
+video-28 Removing Complete XML for Spring Configuration | @Configuration | @ComponentScan | @Bean Annotation
+--------------
+	step-1: create a package name as com.springcore.removeXMl and create respective 
+			bean class, container class nad xml file.
+	step-2: after creating this three files and we are using the @Component Annotation in bean class 
+			without giveing the package details in confi.xml of bean class and we are runing the container
+			then it will give error beacuse it can't be find the particular package to create a bean object
+			so,
+			to overcome this problem we can do below things..
+	step-3: delete the conf.xml file or remove configuration from xml file and 
+			create a java class which acts as config.xml file by inherit some feactures
+			to make a java class as configuration we are using the @Configuration annocation on that class to make it 
+			to handle all the configuration details of bean class.
+	
+	step-4: to define the base package on this java class handle all the configuration 
+			we can using the @ComponentScan(basePackages="package_name") annotaion on java class.
+	
+	step-5: after done above we have to write the AnnotaionConfigApplicationContext(java_class_name); in place of 
+			ClassPathXmlApplicationContext("com/springcore/removeXMl/XmlRemoveConfig.xml"); then run it
+	
+	step-6: other way using the @Bean annotaion -by using the @Bean annotaion also we can create the object of bean
+			by container but we have to apply this @Bean on a method in JavaConfig.java class then it will works as above
+			and that method will return the bean object also no neet to using the @ComponentScan(basePackages="package_name") 
+			and @Component("object")
+	
+	step-7: and one things we need to keep in mind that in bean class we don't provide any
+			bean object name so that container will create bean object in that same name so,here
+			container will create bean object a name of javaConfi.java method which return the 
+			bean object.
+
+----------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------SPRING JDBC---------------------------------------
+	spring JDBC-->  a)spring jdbc is develope on top of jdbc which overcome the problems of jdbc
+				    b)it used to communicate with java application to database
+					c)java application <---> spring jdbc <--> database
+					d)
+	1) to create the object of jdbcTemplate class we need a store the dataSource object in jdbcTemplate
+		property 
+	2) a dataSource is nothing nut a interface which stored all the infor.. about our
+		data related to connection with database. so,
+		to create a object for dataSource interface we have a class which implemets this interface
+		name as DriverManagerDataSource.
+		
+	3) IT has some methods 
+		1) update()-> insert, update,etc..
+		2)execute() ->select queries
+	
+-----------------------------------------------------------------------------
+video-30 Creating new Maven Project | Adding Spring JDBC Dependencies |
+-----------
+	step-1: create a maven project name as springjdbc
+	step-2: copy the dependeny spring-core and spring-context from springcore project and past here
+	step-3: go-to maven website and dowandload the spring jdbc dependeny based on version
+	ex-
+	 <!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-jdbc</artifactId>
+		    <version>6.1.2</version>
+		</dependency>
+	
+	step-4: dowanlaod the mysql-jar dependency from maven website 
+	exa-
+	 
+	 <!-- https://mvnrepository.com/artifact/com.mysql/mysql-connector-j -->
+	<dependency>
+	    <groupId>com.mysql</groupId>
+	    <artifactId>mysql-connector-j</artifactId>
+	    <version>8.0.33</version>
+	</dependency>
+
+-------------------------------------------------------------------------------------------------
+video-31 Database setup | Configuring Jdbc Template to execute query
+-------	 
+	 step-1: create database and table in mysql 
+	 step-2: create bean class name as Student and config.xml file
+	 step-3: give the all the details of DriverManager class and jdbcTemplate interface in xml
+
+------------------------------------------------------------------------------------------------------
+video-32 Inserting data to database using Spring JDBC
+------- 
+	step-1: create JdbcTemplate interface object 
+	step-2: create query and fire the query with the help of update() method
+	
+	step-3: create a package as com.spring.jdbc.Dao to store  StudentDao interface which should has all the method to performs operation 
+			on database.
+	step-4: create a class as StudentDaoIm which implements the StudentDao interface.
+	step-5: create package as com.spring.jdbc.entities to store all the bean class
+	step-6: copy the Student class to com.spring.jdbc.entities package.
+	
+
+----------------------------------------------------------------------------------------------------------------------------
+video-33 Update Operation using Spring Jdbc
+------ 
+	step-1: create a method in StudentDao interface name as change()
+	step-2: define the difination of change() method in StudentDaoIm class and write the 
+			update query and fire it by update() method.
+	step-3: in App.java container call the change() method in-place of insert() method.
+
+---------------------------------------------------------------------------------------
+video-35 Delete Operation using Spring JDBC 
+---------
+	step-1: add the method delete() in StudentDao interface 
+	step-2: implements that method in StudentDaoIm bean class.
+	step-3: call the delete method in app.java conatainer with given a id
+	
+
+------------------------------------------------------------------------------------------
+video-36  Row Mapper Concept | Fetching data using Spring JDBC
+----------
+	step-1: Row Mapper -> resultset object will goes into Row Mapper object and row mapper converts
+			that object to class objects.
+			but problem is that the Row mapper is a interface
+			so we can't create object direct for it for that we have
+			to create a class which implements the Row mapper interface.
+	step-2:
+
+------------------------------------------------------------------------------------------
+video-37 Selecting Single Object using Spring Jdbc | Row Mapper
+------------
+	step-1: to select the single record we are using the RowMapper interface to execute the query
+			to execute that rowMethod interface we are creating a class as RowMapperImp.
+			and implements all method in that class
+	step-2: 
+	
+	
+----------------------------------------------------------------------------------------------
+video-38 Selecting Multiple Objects using Spring Jdbc|
+
+
+----------------------------------------------------------------------------------------
+video-40
+	step-1: create a class as jdbcConfig.java 
+	step-2: and create three method in that class to define those three configuration details
+			which we have done in conf.xml 
+			like for 
+			1)DriverManagerDataSource class configuration.
+			2)JdbcTemplate class configuration details.
+			3)StudentDaoIm bean class configuration details.
+	
+	step-3: use the annocations in jdbcConfig.java class like @Configuration on class ,@Bean() on methods
+	step-4:		
+	
+---------------------------------------------------------------------------------------------------
+video-41 and 42 Autowiring with Spring Jdbc | Spring Jdbc Tutorial | Automatic Wiring
+----------
+	step-1: here we are not going to create the method for return the object of StudentDao bean for that we
+			we going to using the 	Autowiring annotaion.
+			for thata we are using the @Component annotaion on StudentDaoIm class and @ComponentScan(basePackages ={"}) in JbcdConfig.java
+			after that use the @Autowired 
+	
+	
+	
+----------------------------------------------------------------------------------------------------
+video-43 and 44 Spring ORM Complete Setup | New Project | Adding Dependencies in Detail | Spring ORM
+--------
+	step-1: create a Maven project name as SpringORM and follow same setup as preous
+	step-2: download the dependency 
+		1) spring-core
+		2)spring-context
+		3)spring-Hibernate
+		
+	
+	step-3: creating packages com.spring.orm.dao and com.spring.orm.entities and congig.xml
+			creating classes based on requirement.
+	step-4: setting the Bean class and Dao class
+	step-5:  after this all when we run the code then it will show the error that 
+			'Write operations are not allowed in read-only mode 
+			Turn your Session into FlushMode.COMMIT/AUTO or 
+			remove 'readOnly' marker from transaction definition' 
+			so, we need to declare one more dependecy in xml file of Hibernate TranscationManager .
+			and add the annotaion on studentDao class to allow that method for write operation
+			ex-
+			@Transactional => to perform the write operation
+	
+	
+----------------------------------------------------------------------------------------------------------------
+video-46
+	step-1: 
+
+	
+	
+--------------------------------------------------------------------------
+video-47
+	step-1: creating object for bufferReader class.
+		
+	
+	
+	
+	
+------------------------------------------------------------------------------------------------------------------
+-------------------------------------SPRING MVC------------------------------------------
+video-53
+------
+	step-1: create a maven project and during creating maven project choose the 
+			maven-archetype-webapp
+	step-2: after create then maven project one error will come to jsp file to overcome that one 
+			goto- build configuration and add the server.
+	step-3: download the spring-mvc dependecy from maven website and paste to pom.xml
+	ex-
+			<!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
+			<dependency>
+			    <groupId>org.springframework</groupId>
+			    <artifactId>spring-webmvc</artifactId>
+			    <version>5.2.4.RELEASE</version>
+			</dependency>
+							
+
+
+----------------------------------------------------------------------------------------------------------------------------------
+------------------video-54: Configuring and Code our spring mvc project in just 5 steps-----------------------------------
+---------
+---------- 1st creating configure file of dispatcher servlet class -------------------
+	step-1: 1st configure the dispatcher servlet in web.xml file
+		exam
+		-----
+		<!-- configure the dispatcher servlet-->
+		  <servlet>
+			  <servlet-name>spring1</servlet-name>
+			  <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		  </servlet>
+		  <servlet-mapping>
+			  <servlet-name>spring1</servlet-name>
+			  <!-- / this is for define for all the request-->
+			  <url-pattern>/</url-pattern>
+		  </servlet-mapping>
+---------------2nd creating spring configure file -------------------------------			
+	step-2: 2nd create spring configuration file -> this file must be contain the dispatcher name which
+			we define in web.xml
+		example- spring1-servlet.xml
+		------
+	step-3: take configuration code of xml from previous project.
+	
+----------3rd configure view resource----------------------------
+	step-4: view resource -> the view resource is noting but it is simple bean class which is provided
+			by java. so for the class we have to import by identify the proper class name by
+			click on enclip cntr + shift+ t 
+	step-5: 
+	exapme--
+		<!-- this is for InternalResourceViewResolver class-->
+		  <bean 
+		  class="org.springframework.web.servlet.view.InternalResourceViewResolver" 
+		  name="viewResolver">   
+		  
+		  <property name="prefix" value="/WEB-INF/views" />
+		  <property name="suffix" value=".jsp"/>
+		  </bean>
+	
+------ 4th create Controller --------------------------------
+	step-6: to create controller we have create a class on package  and implements the @Controller 
+			annotation on that class top-up
+	step-7: creating methods-> we are creating methods in that controller class to handle
+			the URL. for that we need to use the @RequestMapping("_names") annotation.
+
+-----------5th creating views ---------------------------------
+	step-8: creating a folder name views in WEB-INF and after it create all the jsp files in that location only.	
+	
+	
+	
+----------------------------------------------------------------------------------------------------------------
+video-55 and 56 Sending Data From Controller to View | Full Concept Explain |
+--------
+	step-1: we can send the data from controller by two ways 
+			1) by using model- we are going to send the data from model(data)object by using the 
+			addAttribute(String key,Object value) where String key is the key name to set that value 
+			so that when we are try to access it so by using that key we can access and Object value is
+			that object which we are sending.
+			
+			2) by using ModelAndView.->by using addObject(String key , Object value).
+	
+	step-2: setting the data into controller by using model and getting it from home.jsp by 
+			dynamically.	
+	
+	
+-----------------------------------------------------------------------------------------------------------------------
+video-56
+---------
+	step-1: 
+------------------------------------------------------------------------------------------------------------------------
+video-57 JSP Expression Language to Print Values in Spring MVC Views | JSTL for traversing
+---------------
+	step-1: to use jsp Expression in jsp page so that we can get the values without using the 
+			getAttribute() method of request for that we need to de-activate the pageEgnure in jsp
+			by following the syntax.
+			example--   ${name}
+			
+			<h2>name : 
+ 			<%-- <%= name %>  --%>
+ 
+ 			 ${name}
+			</h2>	
+	
+	step-2: to display the collaction types data - when we are displaying the data of collection types
+			then that data will come in array formate to display them in each new line we are using the 
+			JSTL concept of JSP.
+			to use the JSTL in jsp we have to download the dependeny of it from maven and past in pom.xml
+			example--
+			
+			<!-- https://mvnrepository.com/artifact/jstl/jstl -->
+			<dependency>
+			    <groupId>jstl</groupId>
+			    <artifactId>jstl</artifactId>
+			    <version>1.2</version>
+			</dependency>
+						
+	step-3: to set the JSTL in jsp page we need to use the below code from oracle by searching the jstl url on chrome
+	example--
+	 		<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	
+	
+----------------------------------------------------------------------------------------------------------------------------
+video-58 Sending data from View to Controller Complete concept |
+-------
+	step-1: 
+	
+
+
+---------------------------------------------------------------------------------------
+video-63: User Registration using Spring MVC and Spring ORM |
+	
+	step-1: apply all the dependency of spring-ORM 
+	exam dependcy of hiberrnate-core and spring-orm dependcy in pom.xml and mysql-connecter 
+	
+	step-1: create a Dao class which is only for data transfer
+	step-3:
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

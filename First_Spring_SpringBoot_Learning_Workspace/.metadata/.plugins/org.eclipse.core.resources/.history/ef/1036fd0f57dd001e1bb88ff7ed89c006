@@ -1,0 +1,20 @@
+package com.springboot.test;
+
+import org.springframework.stereotype.Controller;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+@Controller
+public class TestController {
+	
+	@RequestMapping("/test")
+	@ResponseBody
+	public String getdata() {
+		int a = 10;
+		int b = 20;
+		return "adding of two number are : "+(a+b);
+		
+	}
+
+}

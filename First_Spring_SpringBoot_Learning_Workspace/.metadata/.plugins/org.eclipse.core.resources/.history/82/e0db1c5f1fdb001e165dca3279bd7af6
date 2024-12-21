@@ -1,0 +1,9 @@
+package com.rkj.springbootproject;
+
+public class TestController {
+	
+	public String getString() {
+		return "just for testing";
+	}
+
+}

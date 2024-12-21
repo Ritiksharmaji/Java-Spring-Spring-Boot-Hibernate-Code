@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"  >
+<head>
+<meta charset="UTF-8">
+<title>this is contact of thymeleaf</title>
+</head>
+<body>
+<h1>this is learning the THymeLeaf by Ritik Boss</h1>
+<h2>welcome to jumangi jangal</h2>
+<h2 th:text="${name}">author is: </h2>
+<h2>name of CEO <span th:text="${ceoName}"></span></h2>
+<h1>current time: <span th:text="${date}"></span> </h1>
+<h2>name of CEO <span th:text="${#strings.toUpperCase(ceoName)}"></span></h2>
+
+</body>
+</html>

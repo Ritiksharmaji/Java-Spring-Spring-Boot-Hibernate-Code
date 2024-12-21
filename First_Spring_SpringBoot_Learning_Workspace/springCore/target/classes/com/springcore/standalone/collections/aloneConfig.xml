@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:util="http://www.springframework.org/schema/util"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        classpath:/org/springframework/beans/factory/xml/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        classpath:/org/springframework/context/config/spring-context.xsd
+        http://www.springframework.org/schema/util
+        classpath:/org/springframework/beans/factory/xml/spring-util.xsd">
+        
+  
+    <!-- standalone list -->
+
+    <util:list id="mybestfrineds" list-class="java.util.Vector">
+        <value>aman</value>
+        <value>Ankush</value>
+        <value>Arman</value>
+        <value>golu</value>
+    </util:list>
+    
+    <!-- standalone Map -->
+    
+    <util:map id="courseFees" map-class="java.util.HashMap">
+       <entry key="core Java" value="2000"/>
+       <entry key="Advance Java" value="2500"/>
+       <entry key="Spring and Spring-Boot" value="5000"/>
+       <entry key="Python" value="4000"/>
+    </util:map>
+    
+    <!-- standalone propeties -->
+    
+    <util:properties id="databaseconnection">
+       <prop key="driver"> com.mysql.jdbc.Driver</prop>
+       <prop key="username"> Root</prop>
+       <prop key="password"> Root@123</prop>
+       <prop key="url"> mysql:jdbc://localhost:3006/databse_name</prop>
+    </util:properties>
+
+    <bean class="com.springcore.standalone.collections.Person" name="person1">
+        <property name="friends" ref="mybestfrineds"/>
+        <property name="fresstructure" ref="courseFees"/>
+        <property name="properties" ref="databaseconnection"/>
+    </bean>
+    
+    
+
+</beans>
+

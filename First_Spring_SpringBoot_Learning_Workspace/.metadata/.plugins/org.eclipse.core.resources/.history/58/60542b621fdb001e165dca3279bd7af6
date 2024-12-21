@@ -1,0 +1,18 @@
+package com.rkj.springbootproject;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+@Controller
+@ResponseBody
+public class TestController {
+	
+	@RequestMapping("/test")
+	public String getString() {
+		
+		// here we are returin the text not page for
+		// that we need to use @ResponseBody on class
+		return "just for testing";
+	}
+
+}

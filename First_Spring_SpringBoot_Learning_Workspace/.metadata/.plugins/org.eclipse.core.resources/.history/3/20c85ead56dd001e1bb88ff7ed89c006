@@ -1,0 +1,14 @@
+package com.springboot.test;
+
+@Controller
+public class TestController {
+	
+	@RequestMappting("/test")
+	public String getdata() {
+		int a = 10;
+		int b = 20;
+		return "adding of two number are : "+(a+b);
+		
+	}
+
+}

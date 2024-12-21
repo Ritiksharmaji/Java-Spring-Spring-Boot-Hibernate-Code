@@ -1,0 +1,5 @@
+package com.springboot.jpa.dao;
+
+public interface UserRepository {
+
+}

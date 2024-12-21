@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:context="http://www.springframework.org/schema/context"
+ xmlns:p="http://www.springframework.org/schema/p"
+ xmlns:tx="http://www.springframework.org/schema/tx"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+ https://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/context
+ http://www.springframework.org/schema/context/spring-context.xsd
+ http://www.springframework.org/schema/tx
+ http://www.springframework.org/schema/tx/spring-tx.xsd
+ ">
+
+<!-- to enable the @Transactional annotaion-->
+<tx:annotation-driven/>
+
+<!-- creating object for DataSource  to pass the LocalSessionFactory property-->
+<bean class="org.springframework.jdbc.datasource.DriverManagerDataSource" 
+		name="ds">
+	<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+	<property name="url" value="jdbc:mysql://localhost:3306/myhibernate"/>
+	<property name="username" value="root"/>
+	<property name="password" value="Ritiksharma620@"/>
+	
+</bean>
+<!--  creating object for LocalBeanFactory to pass the to pass 
+	the HibernateTemplate-->
+	<bean class="org.springframework.orm.hibernate5.LocalSessionFactoryBean"
+	name="localfactory">
+	<!-- we know that it has three properties then we have to provies them so-->
+	<!-- 1) datasource properties-->
+	<property name="dataSource" ref="ds"></property>
+		
+		<!-- 2) Hibernate properties datails-->
+		<property name="hibernateProperties">
+			<props>
+				<!-- if you want to know about package of class then goto any java class and
+				click the ctrl + shift + t => it will show the box then write the class name or 
+				interface name -->
+				<prop key="dialect">org.hibernate.dialect.MySQL55Dialect</prop>
+				<prop key="show_sql">true</prop>
+				<!-- to create a table in database-->
+				<prop key="hbm2ddl.auto">update</prop>
+			</props>
+		</property>
+		<!-- 3rd annotaion class-->
+		<!-- here we are going to give the details of class which is used to hibernate annotion
+		in this project we have used in only one class which used the Student -->
+		<property name="annotatedClasses">
+			<list>
+				<value>
+					com.spring.orm.entities.Student
+				</value>
+			</list>
+		</property>
+	</bean>
+
+<!-- creating object for HibernateTemplate (StudentDao class)-->
+<bean class="org.springframework.orm.hibernate5.HibernateTemplate" 
+		name="hibernateT">
+		<!-- here we are passing the object of LocalBeanFactory class
+		object as refrence..-->
+		<property name="sessionFactory" ref="localfactory"></property>
+	
+</bean>
+
+<bean class="com.spring.orm.dao.StudentDao" name="studentDao">
+	<!-- here we passing the hibernate object refrence-->
+	<property name="hibernateTemplate" ref="hibernateT"></property>
+</bean>
+
+<!-- Hibernate TransactionManager dependcy without this we can't change the data into database..-->
+<bean class="org.springframework.orm.hibernate5.HibernateTransactionManager" name="transactionManager">
+	<property name="sessionFactory" ref="localfactory"></property>
+</bean>
+
+
+</beans>
+	
+	

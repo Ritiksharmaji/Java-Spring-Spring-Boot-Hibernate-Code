@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"  >
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>this is iterator example pages</h1>
+<hr>
+<p>the below all code of dynamic
+<h2></h2>
+<h2>family list <span th:text="${FamilyList}"></span></h2>
+<h2>family list by iterator</h2>
+<ul>
+	<li th:each="n: ${FamilyList}">
+		<span th:text="${n}"></span>
+	
+	</ul>
+</body>
+</html>

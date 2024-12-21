@@ -1,0 +1,8 @@
+Question->What is Spring Boot?
+ans-> Spring Boot makes it easy to create stand-alone, production-grade Spring-based Applications.
+Question-> How does Spring Boot simplify Java development?
+ans-> Spring Boot reduces the development time and increases productivity by providing defaults for configurations and freeing you from writing boilerplate code.
+what is java programming language?->Java is a popular, high-level programming language known for its versatility, portability, and object-oriented approach. Here's an overview of its key features and characteristics:
+1)java
+2)python
+3)html

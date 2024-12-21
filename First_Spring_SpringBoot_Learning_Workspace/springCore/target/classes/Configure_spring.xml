@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:context="http://www.springframework.org/schema/context"
+ xmlns:p="http://www.springframework.org/schema/p"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+ https://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/context
+ http://www.springframework.org/schema/context/spring-context.xsd">
+ 
+ <!-- 
+	we can assigen or inject  the values of fileds or setter elements of 
+	class  by using three ways..
+	1s) using property and value tag
+	2ns) using property tag and values as attribute
+	3rd) using p schema for that we need to configure the 
+	xmlns:p="http://www.springframework.org/schema/p" in xml file.  
+	-->	
+ 
+ <bean class="com.springcore.springCore.First" name="student1">					
+<!-- first way -->						 
+ <property name="student_id">
+ <value> 
+ 50      
+ </value>
+ </property>
+  <property name="studentName">
+ <value>   
+ RITIK SHARMA    
+ </value>
+ </property>
+ <!--  values as attribute not a tag as previous using p schema  -->
+ <property name = "student_Adds" value = "DELHI"/>
+ </bean>
+ 
+<!-- $$$$$$$ 2nd creating second bean object for storing data by using values as attribute not tag.$$$$$$$$$$$$$$$$$$$$$-->
+ <bean class="com.springcore.springCore.First" name="student2">
+ <property name = "student_id" value = "21"/>
+  <property name="studentName" value="Ankit sharma"/>
+  <property name="student_Adds" value="bihar siwan"/>
+ </bean>
+ 
+ <!-- $$$$$$$$$$$$$$$$$$$$$$ 3rd by using p schema other ways $$$$$$$$$$$$$$$$$$$$$$$$$  --> 
+
+<bean class="com.springcore.springCore.First" name="student3" p:student_id="011" 
+			p:studentName = "priyanshu sharma" p:student_Adds = "ushri bihar"/>
+
+ 
+ </beans>

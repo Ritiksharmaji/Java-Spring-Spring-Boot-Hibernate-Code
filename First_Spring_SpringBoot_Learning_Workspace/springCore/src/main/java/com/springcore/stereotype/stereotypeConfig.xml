@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:util="http://www.springframework.org/schema/util"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        classpath:/org/springframework/beans/factory/xml/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        classpath:/org/springframework/context/config/spring-context.xsd
+        http://www.springframework.org/schema/util
+        classpath:/org/springframework/beans/factory/xml/spring-util.xsd">
+        
+ <context:component-scan base-package="com.springcore.stereotype"/> 
+    
+   <!-- creating standalone collecton of Arraylist -->
+   <util:list id="myaddress" list-class="java.util.Vector">
+        <value>siwan</value>
+        <value>patna</value>
+        <value>vijaywada</value>
+        <value>gunter</value>
+    </util:list>
+    
+    <bean class="com.springcore.stereotype.Teacher" name="teacher1" scope="prototype"/>
+   
+</beans>
+

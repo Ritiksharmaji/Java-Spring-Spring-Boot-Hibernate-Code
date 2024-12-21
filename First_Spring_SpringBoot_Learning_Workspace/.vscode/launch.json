@@ -1,0 +1,35 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "SpringBootWithThymeleafApplication",
+            "request": "launch",
+            "mainClass": "com.springboot.Thymeleaf.SpringBootWithThymeleafApplication",
+            "projectName": "spring_Boot_with_Thymeleaf"
+        },
+        {
+            "type": "java",
+            "name": "DirstspringBootEnclips1Application",
+            "request": "launch",
+            "mainClass": "com.springboot.web.DirstspringBootEnclips1Application",
+            "projectName": "com.web-springmvcboot"
+        },
+        {
+            "type": "java",
+            "name": "SpringbootwithpostgresqlApplication",
+            "request": "launch",
+            "mainClass": "springbootwithpostgresql.springbootwithpostgresql.SpringbootwithpostgresqlApplication",
+            "projectName": "springbootwithpostgresql"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-SpringbootapiApplication<springbootapi>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.apringboot.api.springbootapi.SpringbootapiApplication",
+            "projectName": "springbootapi",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
