@@ -80,6 +80,12 @@
 	</section>
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="D:\java\Code\Java-Spring-Spring-Boot-Hibernate-Code\First_Spring_SpringBoot_Learning_Workspace\app03"/>
+			<item value="D:\java\Code\Java-Spring-Spring-Boot-Hibernate-Code\First_Spring_SpringBoot_Learning_Workspace\app03maven"/>
+			<item value="D:\java\Code\Java-Spring-Spring-Boot-Hibernate-Code\First_Spring_SpringBoot_Learning_Workspace\springbootwithpostgresql"/>
+			<item value="D:\java\Code\Java-Spring-Spring-Boot-Hibernate-Code\First_Spring_SpringBoot_Learning_Workspace\springFirst"/>
+			<item value="D:\java\Code\Java-Spring-Spring-Boot-Hibernate-Code\First_Spring_SpringBoot_Learning_Workspace\Servers"/>
+			<item value="D:\java\Code\Java-Spring-Spring-Boot-Hibernate-Code\First_Spring_SpringBoot_Learning_Workspace\springsecuritywithjwt"/>
 			<item value="E:\CODE\spring and springBoot project\springCore"/>
 			<item value="E:\CODE\spring and springBoot project\SpringJdbc"/>
 			<item value="E:\CODE\spring and springBoot project\SpringORM"/>

@@ -1,9 +1,5 @@
 INDEX VERSION 1.134
-E:\CODE\spring and springBoot project\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\400368022.index
-\springMVCC\src\main\java
-E:\CODE\spring and springBoot project\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\893552416.index
+D:\java\Code\Java-Spring-Spring-Boot-Hibernate-Code\First_Spring_SpringBoot_Learning_Workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\893552416.index
 \SpringMVC\src\main\java
-E:\CODE\spring and springBoot project\spring and Hibernate\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1686169984.index
-\SpringMVC\src\main\java
-E:\CODE\spring and springBoot project\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1686169984.index
+D:\java\Code\Java-Spring-Spring-Boot-Hibernate-Code\First_Spring_SpringBoot_Learning_Workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1686169984.index
 \SpringMVC\src\main\java

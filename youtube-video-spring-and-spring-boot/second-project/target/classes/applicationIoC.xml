@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Define the WebServiceDataProvider bean -->
+    <bean id="webServiceDataProvider" class="car.exmple.IoC.Injection_4.WebServiceDataProvider"/>
+
+    <!-- Define the UserDatabaseProvider bean -->
+    <bean id="userDatabaseProvider" class="car.exmple.IoC.Injection_4.UserDatabaseProvider"/>
+
+    <!-- Define the NewDatabaseProvider bean -->
+    <bean id="newDatabaseProvider" class="car.exmple.IoC.Injection_4.NewDatabaseProvider"/>
+
+    <!-- Define the UserManager bean with dependency injection -->
+    <!-- Example with WebServiceDataProvider -->
+    <bean id="userManagerWithWebdataProvider" class="car.exmple.IoC.Injection_4.UserManager">
+        <constructor-arg ref="webServiceDataProvider"/>
+    </bean>
+    
+     <!-- Example with userDatabaseProvider -->
+    <bean id="userManagerWithUserDatabaseProvider" class="car.exmple.IoC.Injection_4.UserManager">
+        <constructor-arg ref="userDatabaseProvider"/>
+    </bean>
+    
+     <!-- Example with newDatabaseProvider -->
+    <bean id="userManagerWithNewDatabaseProvider" class="car.exmple.IoC.Injection_4.UserManager">
+        <constructor-arg ref="newDatabaseProvider"/>
+    </bean>
+    
+    <!-- Inject the list of data providers into UserManager -->
+    <bean id="userManager_multiProvider" class="car.exmple.IoC.Injection_4.UserManager_multiProviderr">
+        <constructor-arg>
+            <list>
+                <ref bean="webServiceDataProvider"/>
+                <ref bean="userDatabaseProvider"/>
+                <ref bean="newDatabaseProvider"/>
+            </list>
+        </constructor-arg>
+    </bean>
+
+</beans>
