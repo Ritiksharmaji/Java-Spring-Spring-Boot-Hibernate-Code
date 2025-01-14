@@ -19,7 +19,7 @@ video-30 Creating new Maven Project | Adding Spring JDBC Dependencies |
 -----------
 	step-1: create a maven project name as springjdbc
 	step-2: copy the dependeny spring-core and spring-context from springcore project and past here
-	step-3: go-to maven website and dowandload the spring jdbc dependeny based on version
+	step-3: go-to maven website and download the spring jdbc dependeny based on version
 	ex-
 	 <!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc -->
 		<dependency>
@@ -28,7 +28,7 @@ video-30 Creating new Maven Project | Adding Spring JDBC Dependencies |
 		    <version>6.1.2</version>
 		</dependency>
 	
-	step-4: dowanlaod the mysql-jar dependency from maven website 
+	step-4: download the mysql-jar dependency from maven website 
 	exa-
 	 
 	 <!-- https://mvnrepository.com/artifact/com.mysql/mysql-connector-j -->
@@ -48,11 +48,9 @@ video-31 Database setup | Configuring Jdbc Template to execute query
 ------------------------------------------------------------------------------------------------------
 video-32 Inserting data to database using Spring JDBC
 ------- 
-	step-1: create JdbcTemplate interface object 
-	step-2: create query and fire the query with the help of update() method
-	
-	step-3: create a package as com.spring.jdbc.Dao to store  StudentDao interface which should has all the method to performs operation 
-			on database.
+	step-1: create JdbcTemplate interface object in the main class.
+	step-2: create query and fire the query with the help of update() method in the main class.
+	step-3: create a package as com.spring.jdbc.Dao to store  StudentDao interface which should has all the 			    			  method to performs operation on database.
 	step-4: create a class as StudentDaoIm which implements the StudentDao interface.
 	step-5: create package as com.spring.jdbc.entities to store all the bean class
 	step-6: copy the Student class to com.spring.jdbc.entities package.
@@ -80,7 +78,7 @@ video-36  Row Mapper Concept | Fetching data using Spring JDBC
 	step-1: Row Mapper -> resultset object will goes into Row Mapper object and row mapper converts
 			that object to class objects.
 			but problem is that the Row mapper is a interface
-			so we can't create object direct for it for that we have
+			so we can't create object directly for it for that we have
 			to create a class which implements the Row mapper interface.
 	step-2:
 
