@@ -2,6 +2,7 @@
 <section name="Workbench">
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="D:\java\Code\Java-Spring-Spring-Boot-Hibernate-Code\First_Spring_SpringBoot_Learning_Workspace\Chapter_3_Hibernate\Read.md"/>
 			<item value="E:\CODE\spring and springBoot project"/>
 			<item value="E:\CODE\spring and springBoot project\SpringORM\src\main\java\com\spring\orm\entities\Student.java"/>
 		</list>
@@ -27,16 +28,19 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
+			<item value="com.Hibernate_1.Chapter_3_Hibernate1"/>
 			<item value="com.spring.mvce.springMVCC"/>
 			<item value="com.spring.mvc.SpringMVC"/>
 			<item value="com.Hibernate.Hibernate"/>
 		</list>
 		<list key="groupId">
+			<item value="com.Hibernate_1"/>
 			<item value="com.spring.mvce"/>
 			<item value="com.spring.mvc"/>
 			<item value="com.Hibernate"/>
 		</list>
 		<list key="artifactId">
+			<item value="Chapter_3_Hibernate1"/>
 			<item value="springMVCC"/>
 			<item value="SpringMVC"/>
 			<item value="Hibernate"/>

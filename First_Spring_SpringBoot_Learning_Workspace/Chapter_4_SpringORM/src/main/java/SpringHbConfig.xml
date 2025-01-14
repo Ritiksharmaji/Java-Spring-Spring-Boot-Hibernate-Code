@@ -13,13 +13,13 @@
  http://www.springframework.org/schema/tx/spring-tx.xsd
  ">
 
-<!-- to enable the @Transactional annotaion-->
+<!-- to enable the @Transactional annotation-->
 <tx:annotation-driven/>
 
 <!-- creating object for DataSource  to pass the LocalSessionFactory property-->
 <bean class="org.springframework.jdbc.datasource.DriverManagerDataSource" 
 		name="ds">
-	<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+	<property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
 	<property name="url" value="jdbc:mysql://localhost:3306/myhibernate"/>
 	<property name="username" value="root"/>
 	<property name="password" value="Ritiksharma620@"/>
@@ -33,13 +33,17 @@
 	<!-- 1) datasource properties-->
 	<property name="dataSource" ref="ds"></property>
 		
-		<!-- 2) Hibernate properties datails-->
+		<!-- 2) Hibernate properties details-->
 		<property name="hibernateProperties">
 			<props>
 				<!-- if you want to know about package of class then goto any java class and
 				click the ctrl + shift + t => it will show the box then write the class name or 
 				interface name -->
-				<prop key="dialect">org.hibernate.dialect.MySQL55Dialect</prop>
+			<!-- 
+					<prop key="dialect">org.hibernate.dialect.MySQL55Dialect</prop>
+			-->
+				<prop key="dialect">org.hibernate.dialect.MySQL8Dialect</prop>
+
 				<prop key="show_sql">true</prop>
 				<!-- to create a table in database-->
 				<prop key="hbm2ddl.auto">update</prop>
@@ -51,7 +55,7 @@
 		<property name="annotatedClasses">
 			<list>
 				<value>
-					com.spring.orm.entities.Student
+					com.spring.orm_1.entities.Student
 				</value>
 			</list>
 		</property>
@@ -66,7 +70,7 @@
 	
 </bean>
 
-<bean class="com.spring.orm.dao.StudentDao" name="studentDao">
+<bean class="com.spring.orm_1.dao.StudentDao" name="studentDao">
 	<!-- here we passing the hibernate object refrence-->
 	<property name="hibernateTemplate" ref="hibernateT"></property>
 </bean>
