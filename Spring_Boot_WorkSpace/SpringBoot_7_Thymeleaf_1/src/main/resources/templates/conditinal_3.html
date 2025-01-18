@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en" xmlns="www.thymeleavf.org">
+<head>
+	<meta charset="UTF-8" />
+	<title>Exmaple of looping the items from the list</title>
+</head>
+<body>
+	<h1>For ConditionalStatement</h1>
+	
+	<!-- this is by using the Elvis operator -->
+	<h1>User is 
+	<span 
+	th:style="${isActive} ? 'color:green': 'color:red' "
+	th:text="${isActive} ? 'Active' : 'Not-Active' "
+	></span>
+	</h1>
+	
+	<!-- this is by using the if-Unless operator -->
+	<p th:if="${gender}=='male'">Male</p>
+	<p th:Unless="${gender}=='male'">Female</p>
+	
+	<!-- this is by using the switch operator -->
+	<p th:text="${mylist}"></p>
+	<p>checking total length </p>
+	<div th:switch="${#lists.size(mylist)}">
+	<p><span th:text="${#lists.size(mylist)}"></span></p>
+	<h1 th:case="0">List contain Zero Element</h1>
+	<h1 th:case="1">List contain One Element</h1>
+	<h1 th:case= "5">5</h1>
+	</div>
+	
+</body>
+</html>
