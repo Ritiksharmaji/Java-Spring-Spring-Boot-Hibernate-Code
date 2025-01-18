@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1 style="text-align: center;">Admissions Dashboard</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Mobile</th>
+                <th>Course</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="admission : ${admissions}">
+                <td th:text="${admission.id}"></td>
+                <td th:text="${admission.name}"></td>
+                <td th:text="${admission.email}"></td>
+                <td th:text="${admission.mobile}"></td>
+                <td th:text="${admission.course}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

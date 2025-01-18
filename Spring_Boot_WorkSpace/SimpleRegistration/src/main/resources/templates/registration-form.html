@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Registration Form</title>
+    <style>
+        /* Reset and global styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 30px 20px;
+        }
+
+        h1 {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        label {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 8px;
+        }
+
+        input, select, button {
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 14px;
+            width: 100%;
+        }
+
+        input:focus, select:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        button {
+            background: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        .file-upload {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .form-row .form-group {
+            flex: 1;
+            min-width: calc(50% - 20px);
+        }
+
+        @media (max-width: 600px) {
+            .form-row .form-group {
+                min-width: 100%;
+            }
+
+            form {
+                gap: 15px;
+            }
+
+            button {
+                font-size: 14px;
+                padding: 10px;
+            }
+        }
+
+        /* Ensure page fits smaller screen heights */
+        @media (max-height: 500px) {
+            body {
+                padding: 10px;
+            }
+
+            .container {
+                padding: 20px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Student Registration Form</h1>
+        <form action="/api/v9/register" method="post" enctype="multipart/form-data">
+            <!-- Name -->
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+            <!-- Age -->
+            <label for="age">Age</label>
+            <input type="number" id="age" name="age" placeholder="Enter your age" min="1" required>
+
+            <!-- Gender -->
+            <label for="gender">Gender</label>
+            <select id="gender" name="gender" required>
+                <option value="" disabled selected>Select your gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <!-- Course -->
+            <label for="course">Course</label>
+            <select id="course" name="course" required>
+                <option value="" disabled selected>Select your course</option>
+                <option value="B.Sc">B.Sc</option>
+                <option value="B.Tech">B.Tech</option>
+                <option value="M.Sc">M.Sc</option>
+                <option value="MBA">MBA</option>
+                <option value="Ph.D">Ph.D</option>
+            </select>
+
+            <!-- Marks -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="tenth_marks">10th Marks (%)</label>
+                    <input type="number" id="tenth_marks" name="tenthMarks" placeholder="Enter 10th marks" min="0" max="100" required>
+                </div>
+                <div class="form-group">
+                    <label for="inter_marks">12th Marks (%)</label>
+                    <input type="number" id="inter_marks" name="interMarks" placeholder="Enter 12th marks" min="0" max="100" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="bachelor_marks">Bachelor's Marks (%)</label>
+                    <input type="number" id="bachelor_marks" name="bachelorMarks" placeholder="Enter bachelor's marks" min="0" max="100" required>
+                </div>
+                <div class="form-group">
+                    <label for="master_marks">Master's Marks (%)</label>
+                    <input type="number" id="master_marks" name="masterMarks" placeholder="Enter master's marks" min="0" max="100">
+                </div>
+            </div>
+
+            <!-- Photo Upload -->
+            <div class="file-upload">
+                <label for="photoFile">Upload Photo</label>
+                <input type="file" id="photoFile" name="photoFile" accept="image/*" required>
+            </div>
+
+            <!-- Signature Upload -->
+            <div class="file-upload">
+                <label for="sigFile">Upload Signature</label>
+                <input type="file" id="sigFile" name="sigFile" accept="image/*" required>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit">Register</button>
+        </form>
+    </div>
+</body>
+</html>

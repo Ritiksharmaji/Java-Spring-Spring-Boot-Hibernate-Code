@@ -17,13 +17,15 @@
 --><!-- Note:  A "Server" is not itself a "Container", so you may not
      define subcomponents such as "Valves" at this level.
      Documentation at /docs/config/server.html
- --><Server port="0" shutdown="SHUTDOWN">
+ --><Server port="1" shutdown="SHUTDOWN">
   <Listener className="org.apache.catalina.startup.VersionLoggerListener"/>
   <!-- Security listener. Documentation at /docs/config/listeners.html
   <Listener className="org.apache.catalina.security.SecurityListener" />
   -->
-  <!-- APR library loader. Documentation at /docs/apr.html -->
-  <Listener SSLEngine="on" className="org.apache.catalina.core.AprLifecycleListener"/>
+  <!-- APR connector and OpenSSL support using Tomcat Native -->
+  <Listener className="org.apache.catalina.core.AprLifecycleListener"/>
+  <!-- OpenSSL support using FFM API from Java 22 -->
+  <!-- <Listener className="org.apache.catalina.core.OpenSSLLifecycleListener" /> -->
   <!-- Prevent memory leaks due to use of particular java/javax APIs-->
   <Listener className="org.apache.catalina.core.JreMemoryLeakPreventionListener"/>
   <Listener className="org.apache.catalina.mbeans.GlobalResourcesLifecycleListener"/>
@@ -58,15 +60,17 @@
          Java HTTP Connector: /docs/config/http.html
          Java AJP  Connector: /docs/config/ajp.html
          APR (HTTP/AJP) Connector: /docs/apr.html
-         Define a non-SSL/TLS HTTP/1.1 Connector on port 9494
+         Define a non-SSL/TLS HTTP/1.1 Connector on port 9090
     -->
-    <Connector connectionTimeout="20000" port="9494" protocol="HTTP/1.1" redirectPort="8443"/>
+    <Connector connectionTimeout="20000" maxParameterCount="1000" port="9090" protocol="HTTP/1.1" redirectPort="8443"/>
     <!-- A "Connector" using the shared thread pool-->
     <!--
     <Connector executor="tomcatThreadPool"
-               port="9494" protocol="HTTP/1.1"
+               port="9090" protocol="HTTP/1.1"
                connectionTimeout="20000"
-               redirectPort="8443" />
+               redirectPort="8443"
+               maxParameterCount="1000"
+               />
     -->
     <!-- Define an SSL/TLS HTTP/1.1 Connector on port 8443
          This connector uses the NIO implementation. The default
@@ -77,10 +81,12 @@
     -->
     <!--
     <Connector port="8443" protocol="org.apache.coyote.http11.Http11NioProtocol"
-               maxThreads="150" SSLEnabled="true">
+               maxThreads="150" SSLEnabled="true"
+               maxParameterCount="1000"
+               >
         <SSLHostConfig>
             <Certificate certificateKeystoreFile="conf/localhost-rsa.jks"
-                         type="RSA" />
+                         certificateKeystorePassword="changeit" type="RSA" />
         </SSLHostConfig>
     </Connector>
     -->
@@ -92,7 +98,9 @@
     -->
     <!--
     <Connector port="8443" protocol="org.apache.coyote.http11.Http11AprProtocol"
-               maxThreads="150" SSLEnabled="true" >
+               maxThreads="150" SSLEnabled="true"
+               maxParameterCount="1000"
+               >
         <UpgradeProtocol className="org.apache.coyote.http2.Http2Protocol" />
         <SSLHostConfig>
             <Certificate certificateKeyFile="conf/localhost-rsa-key.pem"
@@ -108,7 +116,9 @@
     <Connector protocol="AJP/1.3"
                address="::1"
                port="8009"
-               redirectPort="8443" />
+               redirectPort="8443"
+               maxParameterCount="1000"
+               />
     -->
 
     <!-- An Engine represents the entry point (within Catalina) that processes
@@ -152,7 +162,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="E:\CODE\spring and springBoot project\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="E:\CODE\spring and springBoot project\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\SpringMVC" path="/SpringMVC" reloadable="true" source="org.eclipse.jst.j2ee.server:SpringMVC"/></Host>
+      <Context docBase="D:\Ritik\JavaCode\Java-All-Code\Java-Spring-Spring-Boot-Hibernate-Code\First_Spring_SpringBoot_Learning_Workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="D:\Ritik\JavaCode\Java-All-Code\Java-Spring-Spring-Boot-Hibernate-Code\First_Spring_SpringBoot_Learning_Workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\SpringMVC" path="/SpringMVC" reloadable="true" source="org.eclipse.jst.j2ee.server:SpringMVC"/></Host>
     </Engine>
   </Service>
 </Server>

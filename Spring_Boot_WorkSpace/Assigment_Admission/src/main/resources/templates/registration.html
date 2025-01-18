@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <script src="/static/js/validation.js"></script>
+    <title>Admission Registration</title>
+</head>
+<body>
+    <h1 style="text-align: center;">Admission Registration</h1>
+    <form action="/submit-admission" method="post">
+        <label for="name">Name:</label>
+        <input type="text" name="name" required>
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" name="dob" required>
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" required>
+
+        <label for="mobile">Mobile:</label>
+        <input type="text" name="mobile" required>
+
+        <label for="address">Address:</label>
+        <textarea name="address" required></textarea>
+
+        <label for="course">Course:</label>
+        <select name="course" required>
+            <option value="Engineering">Engineering</option>
+            <option value="Medicine">Medicine</option>
+            <option value="Law">Law</option>
+            <option value="Arts">Arts</option>
+        </select>
+
+        <label for="password">Password:</label>
+        <input type="password" name="password" required>
+
+        <button type="submit">Register</button>
+    </form>
+</body>
+</html>

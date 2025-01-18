@@ -57,17 +57,26 @@
 		<item key="WizardProjectsImportPage.STORE_CLOSE_CREATED_PROJECTS_ID" value="false"/>
 		<item key="WizardProjectsImportPage.STORE_HIDE_CONFLICTING_PROJECTS_ID" value="false"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="D:\Ritik\JavaCode\Java-All-Code\Java-Spring-Spring-Boot-Hibernate-Code\First_Spring_SpringBoot_Learning_Workspace\Chapter_5_SpringMVC.part_1"/>
+			<item value="D:\Ritik\JavaCode\Java-All-Code\Java-Spring-Spring-Boot-Hibernate-Code\First_Spring_SpringBoot_Learning_Workspace\Chapter_4_SpringORM"/>
+			<item value="D:\Ritik\JavaCode\Java-All-Code\Java-Spring-Spring-Boot-Hibernate-Code\First_Spring_SpringBoot_Learning_Workspace\Chapter_3_Hibernate_3_Configuration"/>
+			<item value="D:\Ritik\JavaCode\Java-All-Code\Java-Spring-Spring-Boot-Hibernate-Code\First_Spring_SpringBoot_Learning_Workspace\Chapter_3_Hibernate_2_WithOutMaven"/>
+			<item value="D:\Ritik\JavaCode\Java-All-Code\Java-Spring-Spring-Boot-Hibernate-Code\First_Spring_SpringBoot_Learning_Workspace\Chapter_3_Hibernate_1"/>
+			<item value="D:\Ritik\JavaCode\Java-All-Code\Java-Spring-Spring-Boot-Hibernate-Code\First_Spring_SpringBoot_Learning_Workspace\Chapter_3_Hibernate"/>
+			<item value="D:\Ritik\JavaCode\Java-All-Code\Java-Spring-Spring-Boot-Hibernate-Code\First_Spring_SpringBoot_Learning_Workspace\Chapter_2_SpringJdbc"/>
+			<item value="D:\Ritik\JavaCode\Java-All-Code\Java-Spring-Spring-Boot-Hibernate-Code\First_Spring_SpringBoot_Learning_Workspace\Chapter_1_SpringCore"/>
+			<item value="D:\Ritik\JavaCode\Java-All-Code\Java-Spring-Spring-Boot-Hibernate-Code\First_Spring_SpringBoot_Learning_Workspace\SpringMVC"/>
 			<item value="D:\java\Code\Java-Spring-Spring-Boot-Hibernate-Code\First_Spring_SpringBoot_Learning_Workspace\Hibernate"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
 			<item value=""/>
 		</list>
 		<section name="ExternalProjectImportWizard.dialogBounds">
-			<item key="DIALOG_X_ORIGIN" value="619"/>
-			<item key="DIALOG_Y_ORIGIN" value="142"/>
-			<item key="DIALOG_WIDTH" value="700"/>
-			<item key="DIALOG_HEIGHT" value="861"/>
-			<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
+			<item key="DIALOG_X_ORIGIN" value="429"/>
+			<item key="DIALOG_Y_ORIGIN" value="26"/>
+			<item key="DIALOG_WIDTH" value="525"/>
+			<item key="DIALOG_HEIGHT" value="710"/>
+			<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
 		</section>
 	</section>
 </section>

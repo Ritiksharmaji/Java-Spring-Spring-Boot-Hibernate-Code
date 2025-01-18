@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admission Form</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <script src="/static/js/validation.js"></script>
+</head>
+<body>
+    <h1 style="text-align: center;">Admission Registration Form</h1>
+    <form action="/submit-admission" method="post" enctype="multipart/form-data">
+        <!-- Name -->
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" required>
+
+        <!-- Date of Birth -->
+        <label for="dob">Date of Birth:</label>
+        <input type="date" name="dob" id="dob" required>
+
+        <!-- Email -->
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" required>
+
+        <!-- Mobile -->
+        <label for="mobile">Mobile:</label>
+        <input type="text" name="mobile" id="mobile" required>
+
+        <!-- Address -->
+        <label for="address">Address:</label>
+        <textarea name="address" id="address" required></textarea>
+
+        <!-- Course Selection -->
+        <label for="course">Course:</label>
+        <select name="course" id="course" required>
+            <option value="Engineering">Engineering</option>
+            <option value="Medicine">Medicine</option>
+            <option value="Law">Law</option>
+            <option value="Arts">Arts</option>
+        </select>
+
+        <!-- Password -->
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" required>
+
+        <!-- Photo Upload -->
+        <label for="photo">Upload Photo:</label>
+        <input type="file" name="photo" id="photo" accept=".jpg, .jpeg, .png" required>
+
+        <!-- Signature Upload -->
+        <label for="signature">Upload Signature:</label>
+        <input type="file" name="signature" id="signature" accept=".jpg, .jpeg, .png, .pdf" required>
+
+        <!-- Submit Button -->
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

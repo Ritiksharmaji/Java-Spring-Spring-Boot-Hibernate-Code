@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+</head>
+<body>
+	<h1>welcome to about page</h1>
+	<h2>which kind of help you want from Us!!</h2>
+	<p>name of the owner: <span th:text="${name}"></span> </p>
+	<p> age of the owner: <span th:text="${age}"></span></p>
+	<p>name of the owner in capital letter: <span th:text="${#strings.toUpperCase(name)}"></span> </p>
+
+
+<div th:with="a = 5, b= 6, n = ${name}">
+
+<h2>vale of a is <span th:text="${a}"></span></h2>
+<h2 th:text=" 'value of b is ' +${b} "></h2>
+
+<h1>Local value  of n is <span th:text="${n}"></span></h1>
+
+<h2 th:text=" 'sum of '+${a}+' and '+${b}+' is '+${a+b} "></h2>
+
+</div>
+
+</body>
+</html>
