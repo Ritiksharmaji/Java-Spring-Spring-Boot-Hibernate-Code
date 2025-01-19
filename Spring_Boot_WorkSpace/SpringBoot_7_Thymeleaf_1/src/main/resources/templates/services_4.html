@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en" xmlns="www.thymeleavf.org">
+<head>
+	<meta charset="UTF-8" />
+	<title>Exmaple of looping the items from the list</title>
+</head>
+<body>
+	
+	
+<!-- -------------------------------------------------- -->	
+	<div class="hosttag">
+	<h1>For Including thymeleavf templates</h1>
+	
+	<!-- including footer file -->
+
+	<footer th:replace ="footer::footer1">
+	
+	</footer>
+	</div>
+	
+	
+<!-- -------------------------------------- -->
+<div class="hosttag">
+	<h1>For Including thymeleavf templates by insert</h1>
+	
+	<!-- insert footer file -->
+
+	<footer th:insert ="footer::footer1">
+	
+	</footer>
+</div>
+
+	
+<!-- -------------------------------------- -->
+<div class="hosttag">
+	<h1>For Including thymeleavf templates by include</h1>
+	
+	<!-- include footer file -->
+
+	<footer th:include ="footer::footer1">
+	
+	</footer>
+</div>
+	
+	
+	
+</body>
+</html>
